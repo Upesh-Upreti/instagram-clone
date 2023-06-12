@@ -28,41 +28,8 @@ class _StoryLayoutState extends State<StoryLayout> {
         itemCount: stories.length,
         itemBuilder: (context, index) {
           return index == 0
-              ? MyStory()
-              : Padding(
-                  padding: const EdgeInsets.all(4),
-                  child: Container(
-                    height: 150,
-                    child: Column(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            height: 80,
-                            width: 80,
-                            decoration: const BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [
-                                  Colors.red,
-                                  Colors.orange,
-                                  Colors.pink,
-                                  Colors.blue,
-                                ],
-                                begin: Alignment.bottomLeft,
-                                end: Alignment.topRight,
-                              ),
-                              shape: BoxShape.circle,
-                            ),
-                            child: StoryItem(),
-                          ),
-                        ),
-                        Text(
-                          stories[index],
-                          style: TextStyle(fontSize: 14),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
+              ? const MyStory()
+              : StoryItem(title: stories[index]);
         });
   }
 }

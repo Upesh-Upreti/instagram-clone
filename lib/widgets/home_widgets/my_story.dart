@@ -48,8 +48,8 @@ class _MyStoryState extends State<MyStory> {
           ),
         ),
         Positioned(
-          bottom: 25,
-          left: 55,
+          bottom: 21,
+          left: 51,
           child: Container(
             height: 20,
             width: 20,
