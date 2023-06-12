@@ -78,7 +78,7 @@ class _BaseScreenState extends State<BaseScreen> {
                 height: 30,
                 width: 30,
                 decoration: BoxDecoration(
-                  image: DecorationImage(
+                  image: const DecorationImage(
                     image: AssetImage('assets/images/Captain_America.png'),
                     fit: BoxFit.cover,
                   ),

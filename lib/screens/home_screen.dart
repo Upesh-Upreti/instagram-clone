@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../widgets/home_widgets/post_layout.dart';
+import '../widgets/home_widgets/story_layout.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,12 +12,16 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        height: 200,
-        width: 200,
-        color: Colors.blue,
-      ),
+    return Column(
+      children: [
+        Container(
+          height: 100,
+          child: const StoryLayout(),
+        ),
+        const Expanded(
+          child: PostLayout(),
+        )
+      ],
     );
   }
 }

@@ -1,4 +1,5 @@
 class Constants {
+  // Bottom Navigation Bar Icons
   static const String HOME_BOLD = 'assets/vectors/home-bold.svg';
   static const String HOME_OUTLINED = 'assets/vectors/home-outline.svg';
   static const String SEARCH_BOLD = 'assets/vectors/search-bold.svg';
