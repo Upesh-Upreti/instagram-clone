@@ -30,7 +30,7 @@ class _PostLayoutState extends State<PostLayout> {
             vertical: 5,
           ),
           child: Container(
-            height: 563,
+            height: 580,
             color: Colors.white,
             child: Padding(
               padding: const EdgeInsets.symmetric(

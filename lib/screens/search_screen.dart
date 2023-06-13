@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/widgets/search_screen_widget/search_box.dart';
+import 'package:instagram_clone/widgets/search_screen_widget/search_suggestion.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -10,11 +12,17 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        height: 200,
-        width: 200,
-        color: Colors.green,
+    return const Scaffold(
+      body: Column(
+        children: [
+          SearchBox(),
+          SizedBox(
+            height: 7,
+          ),
+          Expanded(
+            child: SearchSuggestion(),
+          ),
+        ],
       ),
     );
   }
