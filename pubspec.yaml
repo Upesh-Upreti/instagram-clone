@@ -38,6 +38,8 @@ dependencies:
   flutter_svg:
   flutter_staggered_grid_view:
   image_picker: ^0.8.8
+  video_player: ^2.6.1
+  marquee_text: ^2.5.0+1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -64,6 +66,7 @@ flutter:
   assets:
      - assets/vectors/
      - assets/images/
+     - assets/videos/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

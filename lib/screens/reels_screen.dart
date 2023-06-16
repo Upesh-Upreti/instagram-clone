@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/reels.dart';
+
 class ReelsScreen extends StatefulWidget {
   const ReelsScreen({super.key});
 
@@ -10,11 +12,18 @@ class ReelsScreen extends StatefulWidget {
 class _ReelsScreenState extends State<ReelsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        height: 200,
-        width: 200,
-        color: Colors.amber,
+    return Scaffold(
+      body: PageView(
+        scrollDirection: Axis.vertical,
+        children: const [
+          Reels(videoId: 'piano'),
+          Reels(videoId: 'captain'),
+          Reels(videoId: 'piano'),
+          Reels(videoId: 'captain'),
+          Reels(videoId: 'piano'),
+          Reels(videoId: 'captain'),
+          Reels(videoId: 'piano'),
+        ],
       ),
     );
   }
