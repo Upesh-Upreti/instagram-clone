@@ -47,26 +47,20 @@ class _MyStoryState extends State<MyStory> {
           ),
         ),
         Positioned(
-          bottom: 21,
-          left: 51,
-          child: Container(
-            height: 20,
-            width: 20,
-            decoration: const BoxDecoration(
-              color: Colors.blue,
-              shape: BoxShape.circle,
-            ),
-          ),
-        ),
-        Positioned(
-          bottom: 11,
+          bottom: 17,
           left: 41,
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.add,
-              color: Colors.white,
-              size: 15,
+          child: CircleAvatar(
+            backgroundColor: Colors.blue,
+            radius: 15,
+            child: Center(
+              child: IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.add,
+                  color: Colors.white,
+                  size: 15,
+                ),
+              ),
             ),
           ),
         ),
