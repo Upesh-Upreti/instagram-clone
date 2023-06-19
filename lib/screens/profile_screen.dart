@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:instagram_clone/widgets/profile_widgets/user_info.dart';
 
 import '../utils/constants.dart';
 
@@ -60,6 +61,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ],
           ),
         ),
+        body: Column(children: [
+          UserInfo(),
+        ]),
       ),
     );
   }
