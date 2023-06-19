@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:instagram_clone/widgets/profile_widgets/user_info.dart';
+import 'package:instagram_clone/widgets/profile_widgets/user_stories.dart';
 
 import '../utils/constants.dart';
 
@@ -63,6 +64,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
         body: Column(children: [
           UserInfo(),
+          const SizedBox(
+            height: 10,
+          ),
+          Container(
+            height: MediaQuery.of(context).size.height * 0.15,
+            child: UserStories(),
+          ),
         ]),
       ),
     );
