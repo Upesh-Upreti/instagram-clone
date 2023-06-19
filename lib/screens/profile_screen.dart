@@ -4,6 +4,7 @@ import 'package:instagram_clone/widgets/profile_widgets/user_info.dart';
 import 'package:instagram_clone/widgets/profile_widgets/user_stories.dart';
 
 import '../utils/constants.dart';
+import '../widgets/profile_widgets/user_uploads.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -15,7 +16,8 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return DefaultTabController(
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -62,16 +64,44 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ],
           ),
         ),
-        body: Column(children: [
-          UserInfo(),
-          const SizedBox(
-            height: 10,
-          ),
-          Container(
-            height: MediaQuery.of(context).size.height * 0.15,
-            child: UserStories(),
-          ),
-        ]),
+        body: Column(
+          children: [
+            UserInfo(),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.15,
+              child: UserStories(),
+            ),
+            TabBar(
+              tabs: [
+                const Tab(
+                  icon: Icon(
+                    Icons.grid_on_outlined,
+                    color: Colors.black,
+                  ),
+                ),
+                Tab(icon: SvgPicture.asset(Constants.REELS_OUTLINED)),
+                const Tab(
+                  icon: Icon(
+                    Icons.person_pin_outlined,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+            const Expanded(
+              child: TabBarView(
+                children: [
+                  UserUploads(),
+                  UserUploads(),
+                  UserUploads(),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
