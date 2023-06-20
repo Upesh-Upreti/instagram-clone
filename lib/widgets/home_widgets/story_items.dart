@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class StoryItem extends StatefulWidget {
-  const StoryItem({super.key, required this.title});
+  const StoryItem({super.key, required this.title, required this.imageUrl});
   final String title;
+  final String imageUrl;
   @override
   State<StoryItem> createState() => _StoryItemState();
 }
@@ -37,8 +38,8 @@ class _StoryItemState extends State<StoryItem> {
                   padding: const EdgeInsets.all(4),
                   child: Container(
                     decoration: BoxDecoration(
-                      image: const DecorationImage(
-                        image: AssetImage('assets/images/Captain_America.png'),
+                      image: DecorationImage(
+                        image: NetworkImage(widget.imageUrl),
                         fit: BoxFit.cover,
                       ),
                       shape: BoxShape.circle,

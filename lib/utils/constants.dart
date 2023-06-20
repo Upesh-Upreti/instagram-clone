@@ -11,4 +11,7 @@ class Constants {
 
   //Avatar image
   static const String AVATAR_IMAGE = 'assets/images/Captain_America.png';
+
+  //apiurl
+  static const String API_URL = 'https://dummyjson.com/products';
 }

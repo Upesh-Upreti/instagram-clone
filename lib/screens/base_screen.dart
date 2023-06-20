@@ -5,7 +5,9 @@ import 'package:instagram_clone/screens/reels_screen.dart';
 import 'package:instagram_clone/screens/search_screen.dart';
 import 'package:instagram_clone/screens/profile_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:instagram_clone/services/web_services.dart';
 
+import '../models/data.dart';
 import '../utils/constants.dart';
 
 class BaseScreen extends StatefulWidget {
@@ -17,6 +19,8 @@ class BaseScreen extends StatefulWidget {
 
 class _BaseScreenState extends State<BaseScreen> {
   int _currentIndex = 0;
+  bool isLoaded = false;
+  List<Data>? data;
 
   final List<Widget> _screens = [
     const HomeScreen(),
