@@ -5,9 +5,10 @@ import 'package:instagram_clone/screens/reels_screen.dart';
 import 'package:instagram_clone/screens/search_screen.dart';
 import 'package:instagram_clone/screens/profile_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:instagram_clone/services/web_services.dart';
+import 'package:provider/provider.dart';
 
 import '../models/data.dart';
+import '../provider/data_provider.dart';
 import '../utils/constants.dart';
 
 class BaseScreen extends StatefulWidget {
@@ -19,21 +20,25 @@ class BaseScreen extends StatefulWidget {
 
 class _BaseScreenState extends State<BaseScreen> {
   int _currentIndex = 0;
-  bool isLoaded = false;
-  List<Data>? data;
-
-  final List<Widget> _screens = [
-    const HomeScreen(),
-    const SearchScreen(),
-    const AddScreen(),
-    const ReelsScreen(),
-    const ProfileScreen(),
-  ];
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> _screens = [
+      const HomeScreen(),
+      const SearchScreen(),
+      const AddScreen(),
+      const ReelsScreen(),
+      const ProfileScreen(),
+    ];
     return Scaffold(
-        body: _screens[_currentIndex],
+        body: Consumer<DataProvider>(builder: (context, dataProvider, child) {
+          dataProvider.getData();
+
+          return Visibility(
+              visible: dataProvider.isLoaded,
+              replacement: const CircularProgressIndicator(),
+              child: _screens[_currentIndex]);
+        }),
         bottomNavigationBar: BottomNavigationBar(
           onTap: (index) {
             setState(() {
