@@ -15,6 +15,7 @@ class DataProvider extends ChangeNotifier {
       data = [...webData];
       isLoaded = true;
       notifyListeners();
+      return;
     }
     data.add(
       Data(
@@ -26,5 +27,14 @@ class DataProvider extends ChangeNotifier {
             'https://cdn.britannica.com/30/182830-050-96F2ED76/Chris-Evans-title-character-Joe-Johnston-Captain.jpg',
       ),
     );
+    isLoaded = true;
+    notifyListeners();
+    return;
+  }
+
+  void reloadData() {
+    isLoaded = false;
+    notifyListeners();
+    getData();
   }
 }

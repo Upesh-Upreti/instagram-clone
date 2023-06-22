@@ -35,9 +35,14 @@ class _BaseScreenState extends State<BaseScreen> {
           dataProvider.getData();
 
           return Visibility(
-              visible: dataProvider.isLoaded,
-              replacement: const CircularProgressIndicator(),
-              child: _screens[_currentIndex]);
+            visible: dataProvider.isLoaded,
+            replacement: const CircularProgressIndicator(),
+            child: RefreshIndicator(
+                onRefresh: () async {
+                  dataProvider.reloadData();
+                },
+                child: _screens[_currentIndex]),
+          );
         }),
         bottomNavigationBar: BottomNavigationBar(
           onTap: (index) {
